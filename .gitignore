@@ -293,3 +293,4 @@ TSWLatexianTemp*
 
 
 # End of https://www.gitignore.io/api/r,osx,tex
+.Rproj.user
