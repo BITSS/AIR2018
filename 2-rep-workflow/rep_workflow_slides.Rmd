@@ -11,14 +11,13 @@ output:
 editor_options:
   chunk_output_type: console
 ---
+# Coding Suggestions 
 
 ## The Claerbout Principle
 
 > An article about computational science in a scientific publication is not the scholarship itself, it is merely advertising of the scholarship. The actual scholarship is the complete software development environment and the complete set of instructions which generated the figures.
 
 [Buckheit \& Donoho, 1995](https://statweb.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf)
-
-
 
 ## Organizing Principles  
 1 - Use code (scripts), don't work by hand (Excel/spreadsheet, GUIs).  
@@ -94,16 +93,6 @@ Christensen, Miguel & Freese (2018)
 \centering
 \includegraphics[height=3in]{../Images/git.png}
 
-
-## Tips to ease the adoption: concepts [MAKE HANDOUT]. 
-- **Git** is the software that does all the magic. **Github** is an implementation of Git that is easier to use, provides free (public) cloud service, and tools for collaboration. 
-- A repository (**repo**) is a master folder that contains all your work. 
-- Whenever you take a snapshot of your *saved* work, you **commit**
-- When you make changes to your files in your computer, you are working **locally**, whenever you make changes to the files in the cloud you are working **remotelly**. 
-- Whenever you want to update your *remote* *repo*, you **push**. If you want to update you *local* *repo*, you **pull**.
-- When you copy a repo from another person into your online github account, you **fork** it. 
-- When you start a repo from github.com (just created or forked), and want to download it for the first time to your local computer, you **clone** it. 
-
 ## Short Demo: We Start in the Cloud 
 
 1-  Create [github.com](github.com) account and sign in.   
@@ -116,7 +105,7 @@ Christensen, Miguel & Freese (2018)
 
 6- Clone the it. Explore the files and location.   
 7- Create new files, edit. And commit. Edit again, and commit again.   
-8- Push. Edit on github.com, and pull. 
+8- Push. Edit on github.com, and pull.   
 9- Simulate conflict and start from a fresh copy!
 
 ## Want to learn more: 
@@ -124,7 +113,7 @@ Christensen, Miguel & Freese (2018)
 
 - [Great 2hr tutorial to Github by Jenny Bryan (git ninja)](https://www.rstudio.com/resources/videos/happy-git-and-gihub-for-the-user-tutorial/)  
 
-- [Documentation from Matthew Gentzkow Jesse Shapiro](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)  
+- [Documentation from Matthew Gentzkow Jesse Shapiro](http://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)  and Karthik Ram's paper on [Git for Research](https://scfbm.biomedcentral.com/articles/10.1186/1751-0473-8-7) 
 
-- Come to 3-Day trainning (RT2) in Seattle ([in September](https://www.bitss.org/events/research-transparency-and-reproducibility-training-rt2-los-angeles/), [repo from last year](https://github.com/BITSS/RT2Berkeley2017))!
+- Come to 3-Day trainning (RT2) in Los Angeles ([in September](https://www.bitss.org/events/research-transparency-and-reproducibility-training-rt2-los-angeles/), [repo from last year](https://github.com/BITSS/RT2Berkeley2017))!
 

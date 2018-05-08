@@ -10,11 +10,13 @@ Materials for workshop on research transparency for AIR
 
 
 ## Installation Instructions
-The workshop will introduce you to a tool that can help you make your workflow more reproducible: version control (Git/GitHub). You are required to install the following software programs either on your personal laptop or Bank laptop before coming to the workshop for the hands-on exercises. (please remember to bring the laptop too!)
+The workshop will introduce you to a tool that can help you make your workflow more reproducible: version control (Git/GitHub). You are required to install the following software programs either on your personal laptop or AIR laptop before coming to the workshop for the hands-on exercises. (please remember to bring the laptop too!)
 
 ### 1. Version Control with Git and the Github Desktop app
 
-Version control is a powerful way to carefully track revisions to your documents as well as to manage collaboration. Git and Github Desktop are packaged together [here](https://desktop.github.com/). Git is the command line tool, and Github Desktop is a GUI version of the same tool. There are actually [a whole bunch of GUI apps](https://git-scm.com/downloads/guis) that can act as front ends, so you might find later that you prefer another, but we'll stick with Github Desktop for the demo.
+Version control is a powerful way to carefully track revisions to your documents as well as to manage collaboration. Git and Github Desktop are packaged together [here](https://desktop.github.com/). Git is the command line tool, and Github Desktop is a GUI version of the same tool. 
+
+There are actually [a whole bunch of GUI apps](https://git-scm.com/downloads/guis) that can act as front ends, so you might find later that you prefer another, but we'll stick with Github Desktop for the demo.
 
 
 ##### Optional: Specifics for Specifics Platforms
