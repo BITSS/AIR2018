@@ -47,3 +47,4 @@ knitr::opts_chunk$set(echo = TRUE)
 - Cannot pull or push due to merge conflicts? --> Back up local repo, then delete, then clone from remote. 
 
 
+
