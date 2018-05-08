@@ -1,0 +1,45 @@
+---
+title: "Reproducing MHE"
+author: "Fernando Hoces de la Guardia"
+date: "4/5/2018"
+output: html_document
+---
+
+```{r load packages, echo=FALSE, warning=FALSE, results='hide', message=FALSE}
+# I recomend copying and pasting this chunk to every DD you build, just change the list of packages you need for your code to run.
+# Loading required libraries
+list.of.packages <- c("foreign", "stargazer", "sandwich", "haven", "ggplot2", "lfe")
+
+# Chicking if library installed, installed if not. 
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos= "http://cran.cnr.berkeley.edu/") 
+
+# Calling libraries 
+lapply(list.of.packages, require, character.only = TRUE)
+```
+
+## Introduction  
+I have no idea what Fernando is talking about. Will focus on the structure of the argument.   
+
+We want to reproduce figure 524 (originally fig 3 in the paper) from [this paper](http://economics.mit.edu/files/589). Where we look at the effects of a treatment over a outcome. 
+
+
+## Raw data: download and load  
+We obtain the data from the author's website. 
+
+
+```{r download data, eval=FALSE, echo=TRUE, warning=FALSE, results='hide', message=FALSE}
+# Download the data and unzip it
+download.file('http://economics.mit.edu/~dautor/outsourcingatwill_table7.zip', 
+              'outsourcingatwill_table7.zip')
+unzip('outsourcingatwill_table7.zip')
+```   
+
+
+```{r load data, echo=TRUE, warning=FALSE, results='hide', message=FALSE}
+# Load the data
+autor <- read.dta('table7/autor-jole-2003.dta')
+```
+
+
+The data downloaded data set contains `r length(unique(autor$year))` years (from `r min(autor$year)` to `r max(autor$year)`) and `r length(unique(autor$state))` states, for a total of `r dim(autor)[1]` observations.
