@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Documents for Open Policy Analysis"
-author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at \n|  <https://tinyurl.com/y86d6emu>\n"
+author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at \n|  <https://github.com/BITSS/AIR2018>\n"
 date: "American Institutes for Research, May 2018"
 output:
   beamer_presentation:

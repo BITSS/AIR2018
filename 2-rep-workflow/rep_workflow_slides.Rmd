@@ -1,6 +1,6 @@
 ---
 title: 'Reproducible Coding Strategies and Intro to Version Control (Github)'
-author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at <https://goo.gl/aBQ3LR>\n"
+author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at <https://github.com/BITSS/AIR2018>\n"
 date: "American Institutes for Research, May 2018"
 output:
   beamer_presentation:
