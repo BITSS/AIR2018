@@ -1,14 +1,13 @@
 ---
-title: 'Reproducible Workflow: Software'
+title: 'Reproducible Coding Strategies and Intro to Version Control (Github)'
 author: "| Fernando Hoces de la Guardia\n| BITSS   \n| -\n| Slides at <https://goo.gl/aBQ3LR>\n"
-date: "Inter-American Development Bank Workshop, March 2018"
+date: "American Institutes for Research, May 2018"
 output:
   beamer_presentation:
     slide_level: 2
     toc: yes
   slidy_presentation: default
   ioslides_presentation: default
-subtitle: Quick Overviews of Version Control (Github) and Dynamic Documents (RMarkdown)
 editor_options:
   chunk_output_type: console
 ---
@@ -22,20 +21,22 @@ editor_options:
 
 
 ## Organizing Principles  
-1 - Use code (scripts), don't work by hand (Excel/spreadsheet, GUIs).
-2 - Consider not saving statistical output, and just saving the code and raw data that generates it.
-3 - Reproducibility--on your own machine across multiple runs, across machines, across researchers. 
+1 - Use code (scripts), don't work by hand (Excel/spreadsheet, GUIs).  
+2 - Consider not saving statistical output, and just saving the code and raw data that generates it.  
+3 - Reproducibility--on your own machine across multiple runs, across machines, across researchers.   
 
 ## File Management \& Coding Suggestions
 Begin with a logical file structure 
 \includegraphics[height=2.25in]{../Images/files.png}
 
-## General Coding Suggestions I (Christensen, Miguel & Freese, 2018)
+## General Coding Suggestions I   
+Christensen, Miguel & Freese (2018)  
 
-- Make sure script files are self-contained: don't write code that only works if you run a group of other files previously in a specific order and then leave things hanging precariously. 
-- Include tests in your code.   
-This can alert you if output changes. 
-- You can never comment your code too much. Truly explain rather than transliterating: \texttt{x=1} as "initialize the population count to 1" or "set x equal to 1."
+- Make sure script files are self-contained: don't write code that only works if you run a group of other files previously in a specific order and then leave things hanging precariously.     
+
+- Include tests in your code. This can alert you if output changes.    
+
+- You can never comment your code too much. Truly explain rather than transliterating: \texttt{x=1} as "initialize the population count to 1" or "set x equal to 1."  
  
 - Indent your code.   
 
@@ -55,7 +56,7 @@ This can alert you if output changes.
 
 ## The Primary Goal of Version Control (for us)
 
-**The Goal:** keep track of any potentially meaningfull modification to your code (Git is also great for collaboration and exploring the work of others). 
+**The Goal:** keep track of any potentially meaningfull modification to your code. 
 
 ## Strategy 1:  
 1 - Agree on a naming convention with you co-authors (eg: YYYYMMDDfilename_INITALS).  
@@ -77,7 +78,7 @@ This can alert you if output changes.
 
 **Cons:** Harder adoption.   
 
-## Our reason to use git #1: to avoid this situation:   
+## We want to avoid this situation:   
 
 \centering
 
