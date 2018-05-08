@@ -13,6 +13,11 @@ header-includes:
 - \hypersetup{colorlinks, linkcolor=, urlcolor=blue, citecolor=blue}
 ---
 
+PP Intro (incl our paper).   
+
+Add min wage example.   
+
+
 # Dynamic Documents For Computational Reproducibility
 
 ## Dynamic Documents For Computational Reproducibility
@@ -109,7 +114,7 @@ To write inline use only one Back-tick to open followed by an "r" and one to clo
 
 ```{r folder setup, echo=FALSE, eval=FALSE, warning=FALSE, message=FALSE, eval=FALSE}
 cwd <- getwd() 
-setwd("~/Desktop/sandbox/AIR2018/2-dynamicdocs")
+setwd("~/Desktop/sandbox/AIR2018/3-dynamicdocs")
 
 library(googlesheets)
 suppressMessages(library(tidyverse))
@@ -163,7 +168,7 @@ unlink("googlesheets_token.rds", recursive = TRUE)
 library(tidyverse)
 #download.file("https://ndownloader.figshare.com/files/10553269",
 #              "raw_data.csv")
-setwd("~/Desktop/sandbox/AIR2018/2-dynamicdocs")
+setwd("~/Desktop/sandbox/AIR2018/3-dynamicdocs")
 
 df <- read_csv(file = "UG_anchoring/rawdata/raw_data.csv")
 # create treatment var
@@ -315,7 +320,7 @@ Actually the math says otherwise:
 p(n= `r n.pers`) &= `r  round(1 - factorial(n.pers) * choose(365,n.pers)/ 365^n.pers, 3)`  \nonumber
 \end{align}
 
-## Code for the math (`/2-dynamicdocs/first_dd_solution.Rmd`)
+## Code for the math (`/3-dynamicdocs/first_dd_solution.Rmd`)
 
 Not relevant to look at: just copy and paste lines 23-30 from the solutions into your dynamic document. 
 

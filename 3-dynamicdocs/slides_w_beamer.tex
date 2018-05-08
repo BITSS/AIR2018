@@ -1,4 +1,8 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
 \documentclass[ignorenonframetext,]{beamer}
+\usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
@@ -10,27 +14,31 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
+  \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
-\usepackage{microtype}
+\usepackage[]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\newif\ifbibliography
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
 \hypersetup{
             pdftitle={Dynamic Documents For Your Research Workflow},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\newif\ifbibliography
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -40,76 +48,89 @@
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
 \makeatother
 % Scale images if necessary, so that they will not overflow the page
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-
 % Prevent slide breaks in the middle of a paragraph:
 \widowpenalties 1 10000
 \raggedbottom
-
+\setbeamertemplate{part page}{
+\centering
+\begin{beamercolorbox}[sep=16pt,center]{part title}
+  \usebeamerfont{part title}\insertpart\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+\centering
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+  \usebeamerfont{section title}\insertsection\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{part title}
+  \usebeamerfont{subsection title}\insertsubsection\par
+\end{beamercolorbox}
+}
 \AtBeginPart{
-  \let\insertpartnumber\relax
-  \let\partname\relax
   \frame{\partpage}
 }
 \AtBeginSection{
   \ifbibliography
   \else
-    \let\insertsectionnumber\relax
-    \let\sectionname\relax
     \frame{\sectionpage}
   \fi
 }
 \AtBeginSubsection{
-  \let\insertsubsectionnumber\relax
-  \let\subsectionname\relax
   \frame{\subsectionpage}
 }
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
 \hypersetup{colorlinks, linkcolor=, urlcolor=blue, citecolor=blue}
 
 \title{Dynamic Documents For Your Research Workflow}
@@ -126,12 +147,13 @@ Slides at\\
 \begin{frame}
 \tableofcontents[hideallsubsections]
 \end{frame}
-
+\hypertarget{dynamic-documents-for-computational-reproducibility}{%
 \section{Dynamic Documents For Computational
-Reproducibility}\label{dynamic-documents-for-computational-reproducibility}
+Reproducibility}\label{dynamic-documents-for-computational-reproducibility}}
 
 \begin{frame}[fragile]{Dynamic Documents For Computational
 Reproducibility}
+\protect\hypertarget{dynamic-documents-for-computational-reproducibility-1}{}
 
 \begin{itemize}
 \tightlist
@@ -154,18 +176,21 @@ Reproducibility}
 
 \begin{frame}{Currently code and narrative components live in separate
 universes}
+\protect\hypertarget{currently-code-and-narrative-components-live-in-separate-universes}{}
 
 \includegraphics{../Images/Two universes.png}
 
 \end{frame}
 
 \begin{frame}{Dynamic Documents: integrate the two universes!}
+\protect\hypertarget{dynamic-documents-integrate-the-two-universes}{}
 
 \includegraphics{../Images/One universe.png}
 
 \end{frame}
 
 \begin{frame}[fragile]{Dynamic Documents: A Recipe}
+\protect\hypertarget{dynamic-documents-a-recipe}{}
 
 \begin{itemize}
 \tightlist
@@ -185,15 +210,18 @@ universes}
 \end{frame}
 
 \begin{frame}{Markdown laguange/syntax in 60 seconds}
+\protect\hypertarget{markdown-laguangesyntax-in-60-seconds}{}
 
 \includegraphics{../Images/RStudioCS.png}
 
 \end{frame}
 
+\hypertarget{one-type-of-dynamic-document-r-markdown}{%
 \section{One Type of Dynamic Document: R
-Markdown}\label{one-type-of-dynamic-document-r-markdown}
+Markdown}\label{one-type-of-dynamic-document-r-markdown}}
 
 \begin{frame}[fragile]{For our excercise: R Markdown}
+\protect\hypertarget{for-our-excercise-r-markdown}{}
 
 \begin{itemize}
 \tightlist
@@ -211,12 +239,14 @@ Markdown}\label{one-type-of-dynamic-document-r-markdown}
 \end{frame}
 
 \begin{frame}{R Markdown}
+\protect\hypertarget{r-markdown}{}
 
 \includegraphics{../Images/RMarkdownOutputFormats.png}
 
 \end{frame}
 
 \begin{frame}{Basic Structure}
+\protect\hypertarget{basic-structure}{}
 
 \begin{itemize}
 \tightlist
@@ -231,6 +261,7 @@ Markdown}\label{one-type-of-dynamic-document-r-markdown}
 \end{frame}
 
 \begin{frame}[fragile]{Basic Structure: Header}
+\protect\hypertarget{basic-structure-header}{}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -245,6 +276,7 @@ Markdown}\label{one-type-of-dynamic-document-r-markdown}
 \end{frame}
 
 \begin{frame}[fragile]{Basic Structure: Body of Text}
+\protect\hypertarget{basic-structure-body-of-text}{}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -262,6 +294,7 @@ here}. And it can use can type equations using LaTex syntax!
 \end{frame}
 
 \begin{frame}[fragile]{Basic Structure: Code Chunks and Inline}
+\protect\hypertarget{basic-structure-code-chunks-and-inline}{}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -289,6 +322,7 @@ output.
 \end{frame}
 
 \begin{frame}{P-hacking with the little experiment}
+\protect\hypertarget{p-hacking-with-the-little-experiment}{}
 
 \begin{itemize}
 \tightlist
@@ -307,14 +341,17 @@ output.
 \end{frame}
 
 \begin{frame}{P-Hacking in Action (Specification Curve)}
+\protect\hypertarget{p-hacking-in-action-specification-curve}{}
 
 \includegraphics{slides_w_beamer_files/figure-beamer/spec curve-1.pdf}
 
 \end{frame}
 
-\section{Practical Excercise \#1}\label{practical-excercise-1}
+\hypertarget{practical-excercise-1}{%
+\section{Practical Excercise \#1}\label{practical-excercise-1}}
 
 \begin{frame}{Hands-on excercise: the birthday problem!}
+\protect\hypertarget{hands-on-excercise-the-birthday-problem}{}
 
 As an illustration lets write a report using the participants in this
 workshop to illustrate the famous
@@ -332,6 +369,7 @@ Is it something like \(\frac{1}{365} \times N =\) 0.085?
 \end{frame}
 
 \begin{frame}{Goals for excercise \#1}
+\protect\hypertarget{goals-for-excercise-1}{}
 
 \textbf{Primary Goals:}\\
 1 - Become familiar with your first DD.\\
@@ -340,7 +378,7 @@ Is it something like \(\frac{1}{365} \times N =\) 0.085?
 (optional).\\
 4 - Present all the results dynamically into multiple outputs.
 
-\pause 
+\pause
 
 \textbf{Secondary Goal:}\\
 1 - Expose you to some R programming.\\
@@ -349,6 +387,7 @@ Is it something like \(\frac{1}{365} \times N =\) 0.085?
 \end{frame}
 
 \begin{frame}[fragile]{Create a new RMarkdown File}
+\protect\hypertarget{create-a-new-rmarkdown-file}{}
 
 1 - In RStudio:
 \texttt{File-\textgreater{}\ New\ File\ -\textgreater{}\ RMarkdown...}\\
@@ -363,10 +402,9 @@ brief description.
 \end{frame}
 
 \begin{frame}{The birthday problem: the math}
+\protect\hypertarget{the-birthday-problem-the-math}{}
 
-Actually the math says otherwise:
-
-\begin{align} 
+Actually the math says otherwise: \begin{align} 
  1 -  p(n) &= 1 \times \left(1-\frac{1}{365}\right) \times \left(1-\frac{2}{365}\right) \times \cdots \times \left(1-\frac{n-1}{365}\right) \nonumber  \\  &= \frac{ 365 \times 364 \times \cdots \times (365-n+1) }{ 365^n } \nonumber \\ &= \frac{ 365! }{ 365^n (365-n)!} = \frac{n!\cdot\binom{365}{n}}{365^n}\\
 p(n= 31) &= 0.73  \nonumber
 \end{align}
@@ -374,7 +412,8 @@ p(n= 31) &= 0.73  \nonumber
 \end{frame}
 
 \begin{frame}[fragile]{Code for the math
-(\texttt{/2-dynamicdocs/first\_dd\_solution.Rmd})}
+(\texttt{/3-dynamicdocs/first\_dd\_solution.Rmd})}
+\protect\hypertarget{code-for-the-math-3-dynamicdocsfirst_dd_solution.rmd}{}
 
 Not relevant to look at: just copy and paste lines 23-30 from the
 solutions into your dynamic document.
@@ -393,6 +432,7 @@ solutions into your dynamic document.
 \end{frame}
 
 \begin{frame}{Don't like math? Let's run a simple simulation!}
+\protect\hypertarget{dont-like-math-lets-run-a-simple-simulation}{}
 
 1 - Simulate 10,000 rooms with \(n = 31\) random birthdays, and store
 the results in matrix where each row represents a room.\\
@@ -404,6 +444,7 @@ across 10,000 simulations, and report the complement.
 
 \begin{frame}[fragile]{Code for the simulation
 (\texttt{/first\_dd\_solution.Rmd})}
+\protect\hypertarget{code-for-the-simulation-first_dd_solution.rmd}{}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -428,12 +469,13 @@ across 10,000 simulations, and report the complement.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.7254
+## [1] 0.739
 \end{verbatim}
 
 \end{frame}
 
 \begin{frame}{Results}
+\protect\hypertarget{results}{}
 
 \begin{itemize}
 \tightlist
@@ -443,14 +485,16 @@ across 10,000 simulations, and report the complement.
 \item
   However the true probability is of \(p(n= 31) = 0.73\)
 \item
-  And the simulated probability is of 0.7316
+  And the simulated probability is of 0.7226
 \end{itemize}
 
 \end{frame}
 
-\section{Practical Excercise \#2}\label{practical-excercise-2}
+\hypertarget{practical-excercise-2}{%
+\section{Practical Excercise \#2}\label{practical-excercise-2}}
 
 \begin{frame}{Hands-on excercise \#2: Mostly Harmless Econometrics!}
+\protect\hypertarget{hands-on-excercise-2-mostly-harmless-econometrics}{}
 
 There is a
 \href{https://github.com/vikjam/mostly-harmless-replication}{fantastic
@@ -463,12 +507,14 @@ to show how dynamic docs can be used in data analysis.
 \end{frame}
 
 \begin{frame}{Figure to reproduce}
+\protect\hypertarget{figure-to-reproduce}{}
 
 \includegraphics{../Images/autor_fig.png}
 
 \end{frame}
 
 \begin{frame}{Goals for excercise \#2}
+\protect\hypertarget{goals-for-excercise-2}{}
 
 \textbf{Primary Goals:}\\
 1 - Demonstrate how the \textbf{entire workflow} of a study can fit into
@@ -476,7 +522,7 @@ a DD.\\
 2 - Show how to add options to the header.\\
 3 - Demonstrate how a DD make code readable to non-coders.
 
-\pause 
+\pause
 
 \textbf{Secondary Goal:}\\
 1 - Expose you to some R programming.
@@ -484,6 +530,7 @@ a DD.\\
 \end{frame}
 
 \begin{frame}[fragile]{Instructions to get started with excercise \#2:}
+\protect\hypertarget{instructions-to-get-started-with-excercise-2}{}
 
 1 - Create a new blank \texttt{.Rmd} file (steps 1 - 3 in from previous
 ex.) 2 - Save it as \texttt{/3-dynamicdocs/Figure\ 5-2-4.Rmd}\\
@@ -498,6 +545,7 @@ We will go step by step using
 \end{frame}
 
 \begin{frame}[fragile]{Description}
+\protect\hypertarget{description}{}
 
 \begin{itemize}
 \item
@@ -515,14 +563,17 @@ We will go step by step using
 \end{frame}
 
 \begin{frame}[fragile]{Getting the raw data}
+\protect\hypertarget{getting-the-raw-data}{}
 
 \begin{itemize}
+\tightlist
 \item
   Begin a new section (\texttt{\#\#}), titled ``Raw Data''.\\
 \item
   Describe what you will do.\\
 \item
   Create two code chunks:
+\end{itemize}
 
 \begin{verbatim}
 ```{r download data, eval=FALSE, echo=TRUE, 
@@ -530,13 +581,14 @@ warning=FALSE, results='hide', message=FALSE}
 here goes the code
 ```
 \end{verbatim}
-\end{itemize}
 
 \end{frame}
 
 \begin{frame}[fragile]{Cleaning the data}
+\protect\hypertarget{cleaning-the-data}{}
 
 \begin{itemize}
+\tightlist
 \item
   Begin a new section (\texttt{\#\#}), titled ``Data Cleaning''.\\
 \item
@@ -550,13 +602,17 @@ here goes the code
     Guam from the sample (state = 98).\\
   \end{itemize}
 \item
-  Create one code chunk:
+  Create one code chunk:\\
+\end{itemize}
 
 \begin{verbatim}
 ```{r data cleaning, echo=TRUE}
 here goes the code
 ```
 \end{verbatim}
+
+\begin{itemize}
+\tightlist
 \item
   Add some description on the data (using dynamic reporting). See
   solutions (Figure \texttt{5-2-4\_solutions.Rmd} line 58) for examples.
@@ -565,6 +621,7 @@ here goes the code
 \end{frame}
 
 \begin{frame}[fragile]{Build the analytic file}
+\protect\hypertarget{build-the-analytic-file}{}
 
 \begin{itemize}
 \tightlist
@@ -595,6 +652,7 @@ here goes the code
 \end{frame}
 
 \begin{frame}[fragile]{Describe the model to estimate (optional)}
+\protect\hypertarget{describe-the-model-to-estimate-optional}{}
 
 \begin{itemize}
 \tightlist
@@ -613,26 +671,29 @@ here goes the code
 \end{frame}
 
 \begin{frame}[fragile]{Vizualize the results (optional)}
+\protect\hypertarget{vizualize-the-results-optional}{}
 
 \begin{itemize}
+\tightlist
 \item
   Begin a new section (\texttt{\#\#}), titled ``Vizualize the
   results''.\\
 \item
   One line describing what we want to estimate (i.e. ``This estimates
   are then used to create figure 3 of the original paper, which is
-  figure 5.2.4 in MHE.'').
+  figure 5.2.4 in MHE.'').\\
+\end{itemize}
 
 \begin{verbatim}
 ```{r viz}
 here goes the code
 ```
 \end{verbatim}
-\end{itemize}
 
 \end{frame}
 
 \begin{frame}{Practical Excercise \#2}
+\protect\hypertarget{practical-excercise-2-1}{}
 
 \begin{itemize}
 \tightlist
@@ -646,9 +707,11 @@ here goes the code
 
 \end{frame}
 
-\section{Practical Excercise \#3}\label{practical-excercise-3}
+\hypertarget{practical-excercise-3}{%
+\section{Practical Excercise \#3}\label{practical-excercise-3}}
 
 \begin{frame}[fragile]{Goals for excercise \#3}
+\protect\hypertarget{goals-for-excercise-3}{}
 
 \textbf{Primary Goals:}\\
 1 - Map the concepts of DD into Stata \texttt{dyndoc}.\\
@@ -657,6 +720,7 @@ here goes the code
 \end{frame}
 
 \begin{frame}[fragile]{Hands-on excercise \#3: Stata and TIER}
+\protect\hypertarget{hands-on-excercise-3-stata-and-tier}{}
 
 1- Go to github.com and search \texttt{dyndoc\ tier} or click here:
 \href{https://github.com/dvorakt/TIER_exercises}{github.com/dvorakt/TIER\_exercises}.\\
@@ -669,10 +733,12 @@ here goes the code
 
 \end{frame}
 
+\hypertarget{final-remarks-more-resources}{%
 \section{Final Remarks \& More
-Resources}\label{final-remarks-more-resources}
+Resources}\label{final-remarks-more-resources}}
 
 \begin{frame}[fragile]{Final Remarks \& More Resources}
+\protect\hypertarget{final-remarks-more-resources-1}{}
 
 \begin{itemize}
 \tightlist
