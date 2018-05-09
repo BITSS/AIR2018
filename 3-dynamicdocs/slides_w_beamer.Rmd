@@ -156,7 +156,7 @@ To write inline use only one Back-tick to open followed by an "r" and one to clo
 
 
 
-```{r folder setup, echo=FALSE, eval=FALSE, warning=FALSE, message=FALSE, eval=FALSE}
+```{r folder setup, echo=FALSE, eval=FALSE, warning=FALSE, message=FALSE}
 cwd <- getwd() 
 setwd("~/Desktop/sandbox/AIR2018/3-dynamicdocs")
 

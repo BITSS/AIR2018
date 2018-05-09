@@ -45,7 +45,7 @@ Christensen, Miguel & Freese (2018)
 
 
 ## General Coding Suggestions III
--  Name variables informatively: pick a side for indicator variables ``dead" (or ``living'') instead of ``status". (gender, race, etc.)
+-  Name variables informatively: pick a side for indicator variables `dead` (or `living`) instead of `status`. (gender, race, etc.)
 - Don't leave clutter around-delete temporary or unnecessary intermediate objects. 
 \item You can use a prefix such as \texttt{x\_} or \texttt{temp\_} so you know which files or variables can easily be deleted later. Stata also has the \texttt{tempfile} and \texttt{tempvar} functionality.  
 - Every variable should have a label. (If allowed for by the program.)
@@ -113,7 +113,6 @@ Some good habits:
 - Commit often (<1hr)  
 - Always pull before you start a new session of work. Also good to pull before pushing.    
 - Think of your remote as the most important set of files. Get used to deleting things in your local machine.    
-
 
 
 ## Want to learn more: 

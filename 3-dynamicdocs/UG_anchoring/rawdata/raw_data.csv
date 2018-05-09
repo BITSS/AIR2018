@@ -1,5 +1,4 @@
 Timestamp,ID number,Dollar value to question #1,Gender,Education,Years of working experience,Dollar value to question #2
-3/26/2018 21:36:09,1231,1231,Female,College,Less than 2,231
 3/27/2018 7:54:15,997,400,Female,Masters,More than 5,4
 3/27/2018 7:54:23,30,500,Female,Masters,More than 5,5
 3/27/2018 7:54:31,987,450,Female,Doctorate,More than 5,4
@@ -22,3 +21,18 @@ Timestamp,ID number,Dollar value to question #1,Gender,Education,Years of workin
 3/27/2018 7:57:51,993,550,Female,Masters,Between 2 and 5,5
 3/27/2018 8:17:30,10,499,Female,College,Between 2 and 5,4
 3/27/2018 12:42:17,17,500,Female,Masters,More than 5,5
+5/9/2018 9:39:11,30,1,Male,Masters,More than 5,1
+5/9/2018 9:39:21,34,999,Female,Masters,Between 2 and 5,1
+5/9/2018 9:39:24,973,500,Female,Doctorate,More than 5,5
+5/9/2018 9:39:25,40,500,Female,Masters,More than 5,5
+5/9/2018 9:39:44,16,500,Male,Doctorate,More than 5,5
+5/9/2018 9:40:15,39,500,Male,Doctorate,More than 5,5
+5/9/2018 9:40:16,983,500,Female,Doctorate,Between 2 and 5,5
+5/9/2018 9:40:32,34,1,Female,Masters,Between 2 and 5,1
+5/9/2018 9:40:39,971,100,Male,Doctorate,More than 5,1
+5/9/2018 9:40:41,997,500,Female,Masters,Less than 2,5
+5/9/2018 9:40:42,963,100,Female,Doctorate,Between 2 and 5,5
+5/9/2018 9:41:05,37,1,Male,Masters,More than 5,0.01
+5/9/2018 9:41:20,46,500,Male,Doctorate,More than 5,5
+5/9/2018 9:41:39,999,999,Male,Doctorate,More than 5,1
+5/9/2018 9:41:47,989,500,Male,Doctorate,More than 5,5
