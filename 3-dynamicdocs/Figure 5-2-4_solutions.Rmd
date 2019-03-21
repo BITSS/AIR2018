@@ -1,10 +1,10 @@
 ---
 title: 'Chapter 5 of MHE: Fixed Effects, Diff-in-Diff and Panel Data'
 output:
-  pdf_document: default
   html_document:
     df_print: paged
     code_folding: hide
+  pdf_document: default
   word_document: default
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 ---
@@ -79,11 +79,12 @@ autor$year  <- factor(autor$year)
 ## Define model to estimate
 
 We want to estimate a fixed effect model with lead and lag treatment variables:
-
 \begin{align}
 y_{st} = \gamma_{0s}  + \gamma_{1s} t + \lambda_{t}  +  \sum_{\tau = 0}^{m} \delta_{-\tau} D_{s, t - \tau}  + 
 \sum_{\tau = 1}^{q} \delta_{+\tau} D_{s, t + \tau} + X'_{st} \beta + \varepsilon_{st}
 \end{align}
+
+
 
 Where:  
  - $y_{st}$ is the (log) number of jobs under the catergory of Temporary Help Services for each state.  

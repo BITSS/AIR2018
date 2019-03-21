@@ -457,7 +457,7 @@ same birthday?
 \end{quote}
 
 \begin{quote}
-Is it something like \(\frac{1}{365} \times N =\) 0.085?
+Is it something like \(\frac{1}{365} \times N =\) 0.038?
 \end{quote}
 
 \end{frame}
@@ -500,7 +500,7 @@ brief description.
 
 Actually the math says otherwise: \begin{align} 
  1 -  p(n) &= 1 \times \left(1-\frac{1}{365}\right) \times \left(1-\frac{2}{365}\right) \times \cdots \times \left(1-\frac{n-1}{365}\right) \nonumber  \\  &= \frac{ 365 \times 364 \times \cdots \times (365-n+1) }{ 365^n } \nonumber \\ &= \frac{ 365! }{ 365^n (365-n)!} = \frac{n!\cdot\binom{365}{n}}{365^n}\\
-p(n= 31) &= 0.73  \nonumber
+p(n= 14) &= 0.223  \nonumber
 \end{align}
 
 \end{frame}
@@ -528,10 +528,10 @@ solutions into your dynamic document.
 \begin{frame}{Don't like math? Let's run a simple simulation!}
 \protect\hypertarget{dont-like-math-lets-run-a-simple-simulation}{}
 
-1 - Simulate 10,000 rooms with \(n = 31\) random birthdays, and store
+1 - Simulate 10,000 rooms with \(n = 14\) random birthdays, and store
 the results in matrix where each row represents a room.\\
 2 - For each room (row) compute the number of unique birthdays.\\
-3 - Compute the average number of times a room has 31 unique birthdays,
+3 - Compute the average number of times a room has 14 unique birthdays,
 across 10,000 simulations, and report the complement.
 
 \end{frame}
@@ -563,7 +563,7 @@ across 10,000 simulations, and report the complement.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.7354
+## [1] 0.7302
 \end{verbatim}
 
 \end{frame}
@@ -579,7 +579,7 @@ across 10,000 simulations, and report the complement.
 \item
   However the true probability is of \(p(n= 31) = 0.73\)
 \item
-  And the simulated probability is of 0.7293
+  And the simulated probability is of 0.7263
 \end{itemize}
 
 \end{frame}
